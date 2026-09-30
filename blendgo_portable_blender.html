@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlendGo — Portable Blender</title>
+<meta name="description" content="BlendGo Portable Blender — praktis untuk smoothie dan minuman buah di rumah, kantor, gym, dan perjalanan.">
+<style>
+:root{--ink:#14201b;--muted:#64716b;--green:#176b45;--green2:#0d4f34;--cream:#f7f8f4;--line:#e3e8e3;--white:#fff;--accent:#dff3e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+a{text-decoration:none;color:inherit}.top{background:var(--green2);color:white;text-align:center;padding:9px 16px;font-size:13px;font-weight:700}
+nav{height:70px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(22px,calc((100% - 1160px)/2));position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+.logo{font-size:23px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--green)}
+.navlinks{display:flex;gap:28px;font-size:14px;font-weight:700;color:#425049}.navlinks a:hover{color:var(--green)}
+.container{max-width:1160px;margin:auto;padding:0 22px}
+.hero{padding:70px 0 55px;background:radial-gradient(circle at 80% 25%,#e2f4e9 0,transparent 33%),linear-gradient(180deg,#fff 0,#f7f8f4 100%)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
+.badge{display:inline-flex;background:var(--accent);color:var(--green2);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.5px}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.01;letter-spacing:-3px;margin:17px 0}.lead{font-size:18px;color:var(--muted);max-width:580px}
+.price{display:flex;align-items:end;gap:12px;margin:25px 0}.price strong{font-size:34px}.old{text-decoration:line-through;color:#9ba59f}.save{color:#b04a23;font-weight:800;font-size:13px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:13px;padding:15px 23px;font-weight:900;font-size:15px;cursor:pointer}.primary{background:var(--green);color:#fff;box-shadow:0 8px 24px #176b4530}.secondary{background:#fff;border:1px solid var(--line)}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;color:#52615a;font-size:13px;font-weight:700}
+.product-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:25px;box-shadow:0 22px 60px #14382712}.product-img{height:460px;border-radius:20px;background:linear-gradient(135deg,#f4f7f2,#e7efe9);display:flex;align-items:center;justify-content:center;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.note{font-size:11px;color:#7a847f;margin-top:10px}
+section{padding:80px 0}.center{text-align:center}.eyebrow{font-size:12px;color:var(--green);font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.section-title{font-size:40px;letter-spacing:-1.5px;line-height:1.1;margin:10px auto 12px}.section-sub{color:var(--muted);max-width:650px;margin:auto}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}.feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.icon{font-size:28px}.feature h3{margin:10px 0 5px;font-size:17px}.feature p{margin:0;color:var(--muted);font-size:14px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.visual{min-height:420px;border-radius:28px;background:linear-gradient(145deg,#dceee4,#f9faf8);display:flex;align-items:center;justify-content:center;overflow:hidden}.visual img{width:90%;height:90%;object-fit:contain}.list{display:grid;gap:18px;margin-top:25px}.list div{display:flex;gap:13px}.check{width:25px;height:25px;border-radius:50%;background:var(--accent);color:var(--green);display:grid;place-items:center;font-weight:900;flex:none}
+.order{background:var(--green2);color:#fff;border-radius:30px;padding:55px}.order-grid{display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:center}.order h2{font-size:42px;line-height:1.05;letter-spacing:-1.5px;margin:8px 0 15px}.order p{color:#cbded4}.form{background:#fff;color:var(--ink);padding:25px;border-radius:22px}.form label{font-size:12px;font-weight:800;display:block;margin:12px 0 6px}.form input,.form select{width:100%;padding:13px;border:1px solid var(--line);border-radius:10px;font:inherit}.form button{width:100%;margin-top:17px}
+.faq{max-width:800px;margin:35px auto 0}.faq details{background:#fff;border:1px solid var(--line);border-radius:15px;margin:10px 0;padding:18px 20px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);margin-bottom:0}
+footer{padding:35px 0;color:#718078;font-size:13px;border-top:1px solid var(--line)}.footer-flex{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:820px){.navlinks{display:none}.hero-grid,.split,.order-grid{grid-template-columns:1fr}.hero{padding-top:45px}.features{grid-template-columns:1fr 1fr}.product-img{height:350px}.order{padding:32px}.section-title{font-size:32px}}
+@media(max-width:500px){.features{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.price strong{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="top">✨ PROMO LAUNCH — Harga spesial untuk pembelian pertama</div>
+<nav><a class="logo" href="#">Blend<span>Go</span></a><div class="navlinks"><a href="#fitur">Fitur</a><a href="#cara">Cara Pakai</a><a href="#faq">FAQ</a><a href="#order">Pesan</a></div></nav>
+
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="badge">PORTABLE • USB RECHARGEABLE</span>
+<h1>Minum sehat,<br><span style="color:var(--green)">di mana saja.</span></h1>
+<p class="lead">Blender portable yang ringkas untuk membuat smoothie dan minuman buah dengan lebih praktis — cocok dibawa ke kantor, gym, kampus, atau perjalanan.</p>
+<div class="price"><strong>Rp149.000</strong><span class="old">Rp249.000</span><span class="save">HEMAT 40%</span></div>
+<div class="cta"><a class="btn primary" href="#order">Pesan Sekarang →</a><a class="btn secondary" href="#fitur">Lihat Fitur</a></div>
+<div class="trust"><span>✓ Praktis dibawa</span><span>✓ Isi ulang USB</span><span>✓ Mudah dibersihkan</span></div>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/9b4d770a-09a4-408a-8e02-a0cbe1dfd8e1.__CR0,0,1464,600_PT0_SX1464_V1___.jpg" alt="Portable blender"></div>
+<p class="note">Foto produk berasal dari materi listing pemasok. Pastikan kamu memiliki hak untuk memakai foto tersebut sebelum toko dipublikasikan.</p>
+</div>
+</div>
+</section>
+
+<section id="fitur">
+<div class="container center"><div class="eyebrow">Kenapa BlendGo?</div><h2 class="section-title">Kecil, praktis, siap menemani aktivitasmu.</h2><p class="section-sub">Fokus pada kemudahan penggunaan sehari-hari tanpa membawa blender besar.</p></div>
+<div class="container features">
+<div class="feature"><div class="icon">🔋</div><h3>Rechargeable</h3><p>Didesain untuk penggunaan tanpa harus terus terhubung ke stopkontak.</p></div>
+<div class="feature"><div class="icon">🎒</div><h3>Portable</h3><p>Bentuk ringkas memudahkan dibawa saat bekerja, olahraga, atau bepergian.</p></div>
+<div class="feature"><div class="icon">🥤</div><h3>Smoothie & Jus</h3><p>Praktis untuk membuat minuman buah dan smoothie dalam porsi personal.</p></div>
+<div class="feature"><div class="icon">🧼</div><h3>Praktis</h3><p>Komponen yang mudah dibersihkan membuat rutinitas setelah digunakan lebih sederhana.</p></div>
+</div>
+</section>
+
+<section id="cara">
+<div class="container split">
+<div class="visual"><img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/9c55a273-31b4-42c2-af0b-7e87a127f68d.__CR0,0,1464,600_PT0_SX1464_V1___.jpg" alt="Portable blender lifestyle"></div>
+<div><div class="eyebrow">Cara penggunaan</div><h2 class="section-title">Dari buah ke minuman dalam beberapa langkah.</h2>
+<div class="list"><div><span class="check">1</span><span>Isi bahan dan cairan secukupnya sesuai kapasitas produk.</span></div><div><span class="check">2</span><span>Pastikan penutup terpasang dengan benar sebelum digunakan.</span></div><div><span class="check">3</span><span>Nyalakan blender dan proses sampai tekstur sesuai selera.</span></div><div><span class="check">4</span><span>Matikan, tuang minuman, lalu bersihkan setelah digunakan.</span></div></div>
+</div></div>
+</section>
+
+<section>
+<div class="container"><div class="order" id="order"><div class="order-grid"><div><div class="eyebrow" style="color:#9ee0bd">Pesan sekarang</div><h2>Siap bikin minuman favoritmu?</h2><p>Isi data di samping. Tombol pesan akan membuka WhatsApp dengan format order otomatis.</p><p><strong>Rp149.000</strong> / unit • Harga dapat kamu ubah di bagian kode.</p></div>
+<form class="form" onsubmit="orderWA(event)">
+<label>Nama</label><input id="name" required placeholder="Nama lengkap">
+<label>No. WhatsApp</label><input id="phone" required placeholder="08xxxxxxxxxx">
+<label>Jumlah</label><select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+<label>Alamat pengiriman</label><input id="address" required placeholder="Alamat lengkap">
+<button class="btn primary" type="submit">Pesan via WhatsApp →</button>
+</form></div></div></div>
+</section>
+
+<section id="faq">
+<div class="container center"><div class="eyebrow">FAQ</div><h2 class="section-title">Pertanyaan yang sering ditanyakan</h2></div>
+<div class="faq">
+<details><summary>Apakah blender perlu kabel saat digunakan?</summary><p>Halaman ini memposisikan produk sebagai blender portable rechargeable. Detail baterai, kapasitas, dan waktu pemakaian sebaiknya kamu isi sesuai spesifikasi supplier yang benar-benar kamu gunakan.</p></details>
+<details><summary>Bisa dibawa bepergian?</summary><p>Bisa untuk konsep penggunaan portable. Untuk perjalanan udara atau aturan bagasi, ikuti ketentuan maskapai dan spesifikasi baterai produk.</p></details>
+<details><summary>Bagaimana cara membersihkannya?</summary><p>Ikuti petunjuk pada manual produk. Jangan merendam bagian elektronik/motor jika manual supplier tidak mengizinkannya.</p></details>
+<details><summary>Apakah ini website resmi merek tertentu?</summary><p>Tidak. BlendGo adalah nama toko contoh. Jika kamu dropship produk dari supplier, gunakan nama dan klaim yang sesuai dengan produk/supplier yang sebenarnya.</p></details>
+</div>
+</section>
+</main>
+<footer><div class="container footer-flex"><span>© 2026 BlendGo. All rights reserved.</span><span>Toko online • Portable Lifestyle</span></div></footer>
+
+<script>
+const WA_NUMBER="6281234567890"; // GANTI dengan nomor WhatsApp toko kamu
+function orderWA(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value;
+ const p=document.getElementById('phone').value;
+ const q=document.getElementById('qty').value;
+ const a=document.getElementById('address').value;
+ const msg=`Halo BlendGo, saya mau pesan Portable Blender.%0A%0ANama: ${encodeURIComponent(n)}%0ANo. WhatsApp: ${encodeURIComponent(p)}%0AJumlah: ${q}%0AAlamat: ${encodeURIComponent(a)}%0A%0ATotal sementara: Rp${(149000*Number(q)).toLocaleString('id-ID')}`;
+ window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`,'_blank');
+}
+</script>
+</body>
+</html>
